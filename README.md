@@ -2,7 +2,7 @@
 
 # Hi, I'm Aiym 
 
-CS student at Nazarbayev University (2023–2027) building things at the intersection of data science, NLP, and mobile development.
+CS student at Nazarbayev University (2023–2027) building things at the intersection of data science, NLP, and web / mobile development.
 
 
 ---
@@ -20,7 +20,7 @@ CS student at Nazarbayev University (2023–2027) building things at the interse
 
 | Project | What it is | Award |
 |---------|-----------|-------|
-| [hacknu-growth-intelligence](https://github.com/YOUR_USERNAME/hacknu-growth-intelligence) | Automated viral growth analysis pipeline (Reddit + HN → LDA + VADER → live dashboard) | 🥇 Special Prize — HackNU 2026 |
+| [hacknu-growth-intelligence](https://github.com/LunaNanobana/hacknu-growth-intelligence) | Automated viral growth analysis pipeline (Reddit + HN → LDA + VADER → live dashboard) | 🥇 Special Prize — HackNU 2026 |
 | [kazpunct](https://github.com/YOUR_USERNAME/kazpunct) | Kazakh punctuation restoration using fine-tuned RoBERTa | 🥈 2nd — WISH Hackathon / Kaggle |
 | [safespace](https://github.com/YOUR_USERNAME/safespace) | Women's safety platform (Flutter + React) | 🥈 2nd — Women's Hack Day |
 | [volunai](https://github.com/YOUR_USERNAME/volunai) | AI volunteer matching platform (Flutter + Web) | 🥇 1st — SheCodes |
