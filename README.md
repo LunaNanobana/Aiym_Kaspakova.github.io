@@ -18,14 +18,14 @@ CS student at Nazarbayev University (2023–2027) building things at the interse
 
 ## 🏆 Projects
 
-| Project | What it is | Award |
-|---------|-----------|-------|
-| [hacknu-growth-intelligence](https://github.com/LunaNanobana/hacknu-growth-intelligence) | Automated viral growth analysis pipeline (Reddit + HN → LDA + VADER → live dashboard) | 🥇 Special Prize — HackNU 2026 |
-| [kazpunct](https://github.com/YOUR_USERNAME/kazpunct) | Kazakh punctuation restoration using fine-tuned RoBERTa | 🥈 2nd — WISH Hackathon / Kaggle |
-| [safespace](https://github.com/YOUR_USERNAME/safespace) | Women's safety platform (Flutter + React) | 🥈 2nd — Women's Hack Day |
-| [volunai](https://github.com/YOUR_USERNAME/volunai) | AI volunteer matching platform (Flutter + Web) | 🥇 1st — SheCodes |
-| [smart-wardrobe](https://github.com/YOUR_USERNAME/smart-wardrobe) | AI outfit generator from clothing photos | 🥇 1st — Women's Hack Day |
-| [consumer-producer](https://github.com/YOUR_USERNAME/consumer-producer) | Marketplace app: shared Django backend + Flutter mobile client | Personal project |
+| Project | What it is |
+|---------|-----------|
+| [hacknu-growth-intelligence](https://github.com/LunaNanobana/hacknu-growth-intelligence) | Automated viral growth analysis pipeline (Reddit + HN → LDA + VADER → live dashboard) | |
+| [kazpunct](https://github.com/LunaNanobana/kazpunct) | Kazakh punctuation restoration using fine-tuned RoBERTa | 
+| [safespace](https://github.com/LunaNanobana/safespace) | Women's safety platform (Flutter + React) | 
+| [volunai](https://github.com/LunaNanobana/volunai) | AI volunteer matching platform (Flutter + Web) |
+| [smart-wardrobe](https://github.com/LunaNanobana/smart-wardrobe) | AI outfit generator from clothing photos | 
+| [consumer-producer](https://github.com/LunaNanobana/consumer-producer) | Marketplace app: shared Django backend + Flutter mobile client | Personal project |
 
 ---
 
