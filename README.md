@@ -1,5 +1,4 @@
 # Aiym_Kaspakova.github.io
-https://lunananobana.github.io/Aiym_Kaspakova.github.io/
 
 
 # Hi, I'm Aiym 
