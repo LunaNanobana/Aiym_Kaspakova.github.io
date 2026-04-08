@@ -46,5 +46,5 @@ data       = ["pandas", "NumPy", "matplotlib", "seaborn"]
 ## 📫 Contact
 
 - 📧 aiymkas2016@gmail.com
-- 🌐 [Portfolio](https://YOUR_USERNAME.github.io)
+- 🌐 [Portfolio](https://lunananobana.github.io/Aiym_Kaspakova.github.io/)
 - 📍 Astana, Kazakhstan
