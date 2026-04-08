@@ -1,10 +1,9 @@
 # Aiym_Kaspakova.github.io
-[README_profile.md](https://github.com/user-attachments/files/26571970/README_profile.md)
-# Hi, I'm Aiym 👋
+
+# Hi, I'm Aiym 
 
 CS student at Nazarbayev University (2023–2027) building things at the intersection of data science, NLP, and mobile development.
 
-I've won or placed at 5 hackathons, shipped real ML pipelines, and built production-style apps with Flutter + Django backends.
 
 ---
 
