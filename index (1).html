@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Aiym Kaspakova — Software Engineer · AI / ML</title>
+<meta name="description" content="Aiym Kaspakova — Software Engineer and AI/ML developer building accessible, human-centred AI products. Flutter, Python, PyTorch, NLP and computer vision. 4× hackathon prize winner."/>
+<meta name="author" content="Aiym Kaspakova"/>
+<meta property="og:title" content="Aiym Kaspakova — Software Engineer · AI / ML"/>
+<meta property="og:description" content="AI-powered products for accessibility and social impact. Flutter · Python · PyTorch · NLP · Computer Vision."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://lunananobana.github.io/Aiym_Kaspakova.github.io/"/>
+<meta name="theme-color" content="#0a0a08"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0a08'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='28' fill='%23c8f060'%3EAK%3C/text%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg: #0a0a08;
+  --surface: #111110;
+  --surface2: #1a1a17;
+  --border: #2a2a26;
+  --text: #e8e6df;
+  --muted: #6b6960;
+  --accent: #c8f060;
+  --accent2: #60c8f0;
+  --accent3: #f0906a;
+  --warm: #f0d060;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─── NOISE TEXTURE ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.5;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, background 0.3s, backdrop-filter 0.3s;
+}
+nav.scrolled {
+  border-color: var(--border);
+  background: rgba(10,10,8,0.85);
+  backdrop-filter: blur(16px);
+}
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ─── HERO ─── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(200,240,96,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,240,96,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+}
+
+.hero-orb {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,240,96,0.08) 0%, transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: orbPulse 8s ease-in-out infinite;
+}
+.hero-orb2 {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(96,200,240,0.06) 0%, transparent 70%);
+  bottom: 0; left: 100px;
+  animation: orbPulse 10s ease-in-out infinite reverse;
+}
+
+@keyframes orbPulse {
+  0%, 100% { transform: scale(1) translate(0,0); }
+  50% { transform: scale(1.1) translate(20px, -20px); }
+}
+
+.hero-content {
+  position: relative;
+  max-width: 900px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  border: 1px solid rgba(200,240,96,0.3);
+  padding: 6px 14px;
+  border-radius: 100px;
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.1s forwards;
+}
+.hero-tag::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: blink 2s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+h1 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: clamp(52px, 7vw, 96px);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+h1 .line2 { color: var(--accent); display: block; }
+h1 .line3 { color: var(--muted); font-weight: 400; font-style: italic; display: block; }
+
+.hero-sub {
+  font-size: 18px;
+  color: var(--muted);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.35s forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.5s forwards;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #0a0a08;
+  font-weight: 500;
+}
+.btn-primary:hover { background: #d4f470; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,240,96,0.2); }
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  margin-top: 80px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+  opacity: 0;
+  animation: fadeUp 0.8s 0.65s forwards;
+}
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 36px;
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── SECTIONS ─── */
+section {
+  padding: 100px 48px;
+}
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  margin-bottom: 64px;
+}
+
+/* ─── PROJECTS ─── */
+#projects { background: var(--surface); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2px;
+}
+
+.project-card {
+  background: var(--bg);
+  padding: 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(200,240,96,0.05), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.project-card:hover { background: var(--surface2); border-color: var(--border); }
+.project-card:hover::before { opacity: 1; }
+
+.card-award {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 24px;
+}
+.award-gold { background: rgba(240,208,96,0.12); color: var(--warm); border: 1px solid rgba(240,208,96,0.2); }
+.award-silver { background: rgba(96,200,240,0.1); color: var(--accent2); border: 1px solid rgba(96,200,240,0.2); }
+.award-special { background: rgba(200,240,96,0.1); color: var(--accent); border: 1px solid rgba(200,240,96,0.2); }
+.award-personal { background: rgba(240,144,106,0.1); color: var(--accent3); border: 1px solid rgba(240,144,106,0.2); }
+
+.card-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.card-sub {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+.card-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+
+.tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+}
+
+.card-arrow {
+  position: absolute;
+  top: 40px; right: 40px;
+  width: 32px; height: 32px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.project-card:hover .card-arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  transform: rotate(45deg);
+}
+
+/* ─── MODAL ─── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 500;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  backdrop-filter: blur(4px);
+}
+.modal-backdrop.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px 16px 0 0;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 48px;
+  transform: translateY(40px);
+  transition: transform 0.3s cubic-bezier(0.16,1,0.3,1);
+}
+.modal-backdrop.open .modal { transform: translateY(0); }
+
+.modal-close {
+  position: sticky;
+  top: 0;
+  float: right;
+  width: 36px; height: 36px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--muted);
+  transition: all 0.2s;
+  z-index: 10;
+}
+.modal-close:hover { border-color: var(--accent); color: var(--accent); }
+
+.modal-award {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  padding: 5px 14px; border-radius: 100px; margin-bottom: 20px;
+}
+
+.modal h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800; font-size: 32px;
+  letter-spacing: -1px; margin-bottom: 8px;
+}
+.modal-event {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; color: var(--muted); margin-bottom: 24px;
+}
+.modal-desc { color: var(--muted); line-height: 1.75; margin-bottom: 32px; font-size: 15px; }
+
+.modal-section-title {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 13px;
+  letter-spacing: 0.05em; color: var(--text);
+  margin-bottom: 12px; text-transform: uppercase;
+}
+.modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 32px; }
+.modal-tag {
+  font-family: 'DM Mono', monospace; font-size: 12px;
+  padding: 6px 14px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 6px; color: var(--text);
+}
+
+.modal-highlights { margin-bottom: 32px; }
+.modal-highlight {
+  display: flex; gap: 14px;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 14px; color: var(--muted); line-height: 1.6;
+}
+.modal-highlight::before { content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 1px; }
+
+.modal-links { display: flex; gap: 12px; flex-wrap: wrap; }
+.modal-link {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 20px; border-radius: 6px;
+  font-family: 'DM Mono', monospace; font-size: 12px;
+  text-decoration: none; transition: all 0.2s;
+  border: 1px solid var(--border); color: var(--muted); background: var(--bg);
+}
+.modal-link:hover { border-color: var(--accent); color: var(--accent); }
+.modal-link.primary { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.modal-link.primary:hover { background: #d4f470; }
+
+/* ─── SKILLS ─── */
+#skills { }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2px;
+}
+.skill-block {
+  padding: 36px;
+  background: var(--surface);
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.skill-block:hover { border-color: var(--border); }
+.skill-icon { font-size: 28px; margin-bottom: 16px; }
+.skill-name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700; font-size: 16px; margin-bottom: 12px;
+}
+.skill-items { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); line-height: 2; letter-spacing: 0.04em; }
+
+/* ─── ABOUT ─── */
+#about { background: var(--surface); }
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 20px; font-size: 15px; }
+.about-text .highlight { color: var(--accent); font-style: italic; }
+.about-awards { }
+.award-item {
+  display: flex; gap: 20px;
+  padding: 20px 0; border-bottom: 1px solid var(--border);
+}
+.award-year {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--muted); letter-spacing: 0.06em; min-width: 48px; padding-top: 3px;
+}
+.award-info-name { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 4px; }
+.award-info-event { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+
+/* ─── CONTACT ─── */
+#contact {
+  text-align: center;
+  padding: 140px 48px;
+  position: relative;
+  overflow: hidden;
+}
+#contact::before {
+  content: '';
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,240,96,0.07) 0%, transparent 70%);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+#contact h2 { margin-bottom: 16px; }
+#contact p { color: var(--muted); margin-bottom: 48px; font-size: 17px; }
+.contact-links { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--muted); }
+
+/* ─── SCROLL REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s, transform 0.7s;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── FIXES & ADDITIONS ─── */
+.hero-sub strong { color: var(--text); font-weight: 500; }
+.hero-tag-text { color: var(--accent); }
+.hero-actions { margin-bottom: 0; }
+
+/* nav: mobile menu */
+.nav-toggle {
+  display: none;
+  background: none; border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text); width: 40px; height: 40px; cursor: pointer;
+  font-size: 18px; align-items: center; justify-content: center;
+}
+.nav-links a.active { color: var(--accent); }
+
+/* focus states (keyboard accessibility) */
+a:focus-visible, button:focus-visible, .project-card:focus-visible {
+  outline: 2px solid var(--accent); outline-offset: 3px;
+}
+
+/* projects grid: no overflow on small phones */
+.projects-grid { grid-template-columns: repeat(auto-fill, minmax(min(360px, 100%), 1fr)); }
+.skills-grid { grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr)); }
+.card-award { margin-right: 44px; }
+.award-event { background: rgba(232,230,223,0.06); color: var(--text); border: 1px solid var(--border); }
+.card-impact {
+  font-size: 13px; color: var(--text); line-height: 1.55;
+  border-left: 2px solid var(--accent); padding-left: 12px; margin: -12px 0 24px;
+}
+
+/* ─── EXPERIENCE ─── */
+.xp-list { display: grid; gap: 2px; }
+.xp-item {
+  display: grid; grid-template-columns: 220px 1fr; gap: 48px;
+  padding: 40px; background: var(--surface); border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.xp-item:hover { border-color: var(--border); }
+.xp-date { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); letter-spacing: 0.06em; padding-top: 6px; }
+.xp-date .now { display: inline-block; margin-top: 10px; color: var(--accent); border: 1px solid rgba(200,240,96,0.3); border-radius: 100px; padding: 3px 10px; font-size: 10px; letter-spacing: 0.1em; }
+.xp-role { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.5px; line-height: 1.2; }
+.xp-company { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--accent2); margin: 6px 0 18px; letter-spacing: 0.04em; }
+.xp-points { list-style: none; display: grid; gap: 10px; margin-bottom: 20px; }
+.xp-points li { display: flex; gap: 12px; font-size: 14px; color: var(--muted); line-height: 1.65; }
+.xp-points li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+.xp-points b { color: var(--text); font-weight: 500; }
+
+/* ─── ABOUT / AWARDS ─── */
+.award-item { align-items: baseline; }
+.award-badge {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em;
+  padding: 3px 10px; border-radius: 100px; white-space: nowrap; margin-left: auto; align-self: center;
+}
+.award-body { flex: 1; }
+.about-text p strong { color: var(--text); font-weight: 500; }
+
+/* stats */
+.hero-stats { flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .reveal, h1, .hero-tag, .hero-sub, .hero-actions, .hero-stats { opacity: 1 !important; transform: none !important; }
+  html { scroll-behavior: auto; }
+}
+
+@media (max-width: 900px) {
+  .xp-item { grid-template-columns: 1fr; gap: 12px; padding: 32px 24px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 16px 24px; }
+  .nav-toggle { display: inline-flex; }
+  .nav-links {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 0; background: rgba(10,10,8,0.97);
+    border-bottom: 1px solid var(--border); backdrop-filter: blur(16px);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 16px 24px; font-size: 13px; }
+  #hero { padding: 100px 24px 60px; }
+  h1 { letter-spacing: -2px; }
+  section { padding: 72px 24px; }
+  h2 { margin-bottom: 40px; }
+  .project-card { padding: 28px 24px; }
+  .card-arrow { top: 28px; right: 24px; }
+  .about-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-stats { gap: 28px; margin-top: 56px; padding-top: 32px; }
+  .modal { padding: 32px 24px; }
+  .modal h3 { font-size: 26px; }
+  #contact { padding: 100px 24px; }
+  footer { flex-direction: column; gap: 12px; text-align: center; padding: 28px 24px; }
+}
+
+/* hero subtitle line: keep it on one line */
+h1 .line3 { font-size: 0.5em; letter-spacing: -1px; margin-top: 14px; line-height: 1.1; }
+
+/* hero must never be wider than the screen (flex item min-width fix) */
+.hero-content { min-width: 0; width: 100%; }
+@media (max-width: 768px) {
+  h1 { font-size: clamp(40px, 12vw, 64px); }
+  .hero-sub { font-size: 16px; }
+  .hero-tag { font-size: 10px; letter-spacing: 0.08em; max-width: 100%; }
+}
+@media (max-width: 768px) {
+  h1 { font-size: clamp(32px, 10vw, 64px); letter-spacing: -1.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="nav-logo" aria-label="Back to top">AK<span>.</span></a>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#experience">EXPERIENCE</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#skills">SKILLS</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#contact">CONTACT</a></li>
+  </ul>
+</nav>
+
+<main>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb2"></div>
+  <div class="hero-content">
+    <div class="hero-tag">ASTANA, KAZAKHSTAN · OPEN TO OPPORTUNITIES</div>
+    <h1>
+      Aiym
+      <span class="line2">Kaspakova</span>
+      <span class="line3">Software Engineer · AI / ML</span>
+    </h1>
+    <p class="hero-sub">I build <strong>AI-powered products for accessibility and social impact</strong> — from a Kazakh Sign Language mobile platform to NLP, computer vision and recommendation systems that solve real problems.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">View Projects →</a>
+      <a href="CV_Aiym_Kaspakova.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download CV ↓</a>
+      <a href="mailto:aiymkas2016@gmail.com" class="btn btn-outline">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-num">4×</div><div class="stat-label">HACKATHON AWARDS</div></div>
+      <div><div class="stat-num">2</div><div class="stat-label">INDUSTRY INTERNSHIPS</div></div>
+      <div><div class="stat-num">8+</div><div class="stat-label">AI & SOFTWARE PROJECTS</div></div>
+      <div><div class="stat-num">3</div><div class="stat-label">LANGUAGES SPOKEN</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label">/ 01 — EXPERIENCE</p>
+  <h2>Work<br/>Experience</h2>
+  <div class="xp-list">
+    <article class="xp-item reveal">
+      <div class="xp-date">MAY 2026 — PRESENT<br/><span class="now">● CURRENT</span></div>
+      <div>
+        <div class="xp-role">Flutter Developer Intern</div>
+        <div class="xp-company">AI-Ym · Novators LLP / HRI Lab</div>
+        <ul class="xp-points">
+          <li><span>Developed cross-platform mobile features in Flutter for <b>AI-Ym, an AI-powered Kazakh Sign Language accessibility platform</b>, making digital services accessible to deaf and hard-of-hearing users — <b>attracting new clientele and improving brand image</b></span></li>
+          <li><span>Integrated the mobile app with backend APIs and platform services and built accessible, user-friendly interfaces, <b>reducing user journey failure rate by 30%</b></span></li>
+          <li><span>Tested, debugged and optimised the app together with frontend, backend and AI teams; <b>streamlined stakeholder management, reducing response time from weeks to days</b></span></li>
+        </ul>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">REST APIs</span><span class="tag">Accessibility</span><span class="tag">iOS & Android</span></div>
+      </div>
+    </article>
+    <article class="xp-item reveal">
+      <div class="xp-date">SUMMER 2025</div>
+      <div>
+        <div class="xp-role">QA Engineer Intern</div>
+        <div class="xp-company">a1qa</div>
+        <ul class="xp-points">
+          <li><span>Performed functional testing of web applications and validated business logic against requirements, catching critical defects before release and <b>reducing post-release bugs by ~25%</b></span></li>
+          <li><span>Logged and tracked <b>100+ issues</b> in Jira and produced quality assessment reports that gave the team a clear view of release readiness, <b>cutting bug triage time by ~20%</b></span></li>
+          <li><span>Bridged QA and the project team to clarify requirements and communicate testing outcomes, <b>preventing rework and keeping releases on schedule</b></span></li>
+        </ul>
+        <div class="tags"><span class="tag">Jira</span><span class="tag">Functional Testing</span><span class="tag">Test Reporting</span><span class="tag">Business Logic Analysis</span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">/ 02 — WORK</p>
+  <h2>Projects &<br/>Competitions</h2>
+  <div class="projects-grid" id="projectsGrid"></div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label">/ 03 — TOOLKIT</p>
+  <h2>Technical<br/>Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-block reveal">
+      <div class="skill-icon">🧠</div>
+      <div class="skill-name">Machine Learning & NLP</div>
+      <div class="skill-items">PyTorch · Hugging Face · scikit-learn<br/>RoBERTa fine-tuning · LDA · VADER<br/>Computer Vision · Recommendation Systems</div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">📊</div>
+      <div class="skill-name">Data & Analysis</div>
+      <div class="skill-items">Python · SQL · pandas · NumPy<br/>matplotlib · seaborn<br/>PRAW · Algolia API</div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">📱</div>
+      <div class="skill-name">Mobile Development</div>
+      <div class="skill-items">Flutter · Dart<br/>iOS & Android<br/>Shared backend architecture</div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🌐</div>
+      <div class="skill-name">Backend & Web</div>
+      <div class="skill-items">Django · Flask · Docker<br/>REST APIs · JWT Auth<br/>React · HTML/CSS/JS</div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">🧪</div>
+      <div class="skill-name">QA & Product</div>
+      <div class="skill-items">Jira · Functional Testing<br/>Test Reporting · Business Logic Analysis<br/>Figma Prototyping</div>
+    </div>
+    <div class="skill-block reveal">
+      <div class="skill-icon">💻</div>
+      <div class="skill-name">Programming Languages</div>
+      <div class="skill-items">Python · Dart · SQL<br/>C · C++ · Java · Go<br/>Prolog · MIPS Assembly</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">/ 04 — ABOUT</p>
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <h2 style="margin-bottom:32px">A bit<br/>about me</h2>
+      <p>I'm a software engineer focused on <strong>AI that people actually use every day</strong> — especially products that make technology more accessible. My background is in <strong>Computer Science (Nazarbayev University)</strong>, and I work across the full stack: mobile apps in Flutter, backends in Django and Flask, and ML models in PyTorch.</p>
+      <p>Outside of code, I organise events for the SIAM math chapter at Nazarbayev University, compete in debate tournaments with the Nomad Debate Club, and have tutored students preparing for Olympiads and IELTS.</p>
+      <p>I speak <strong>English, Kazakh and Russian</strong>.</p>
+      <p style="margin-bottom:0">Currently open to <span class="highlight">Software Engineering, AI and Machine Learning roles</span> — remote-friendly or based in Kazakhstan.</p>
+    </div>
+    <div class="about-awards reveal">
+      <h3 style="font-family:'Syne',sans-serif;font-weight:700;font-size:18px;margin-bottom:24px;letter-spacing:-0.3px">Hackathons & Awards</h3>
+      <div id="awardsList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-label">/ 05 — CONTACT</p>
+  <h2>Let's work<br/>together</h2>
+  <p>Open to Software Engineering, AI / ML and mobile development roles, and research collaborations.</p>
+  <div class="contact-links">
+    <a href="mailto:aiymkas2016@gmail.com" class="btn btn-primary">✉️ aiymkas2016@gmail.com</a>
+    <a href="https://github.com/LunaNanobana" target="_blank" rel="noopener" class="btn btn-outline">GitHub →</a>
+    <a href="https://www.linkedin.com/in/aiym-kaspakova-0960b2264/" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn →</a>
+    <a href="CV_Aiym_Kaspakova.pdf" target="_blank" rel="noopener" class="btn btn-outline">CV ↓</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p>© <span id="year">2026</span> Aiym Kaspakova</p>
+  <p>Built from scratch · Hosted on GitHub Pages</p>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+const projects = [
+  {
+    id: 'volunai',
+    award: '1ST PLACE · SHECODES', awardClass: 'award-gold',
+    title: 'VolunAI',
+    event: 'SheCodes Hackathon · Volunteer Matching Platform',
+    desc: 'An AI-powered volunteer matching platform connecting volunteers, organisers and communities across Kazakhstan — smart event search, AI chat, a wellbeing module, a gamified leaderboard and dual roles for volunteers and organisers.',
+    impact: 'Won 1st place; matching engine designed to cut volunteer search time by ~50% and improve retention for NGOs.',
+    tags: ['Flutter', 'Dart', 'HTML', 'CSS', 'JavaScript', 'AI Integration', 'ML Recommendations'],
+    highlights: [
+      'AI-driven task matching and ML recommendations connect volunteers to opportunities that fit their skills and schedule',
+      'Dual role system: separate flows and permissions for volunteers and event organisers',
+      'AI chat assistant helping volunteers find opportunities and answer questions',
+      'Psychology module for wellbeing check-ins and burnout monitoring',
+      'Gamified points system and leaderboard to reward active volunteers and drive engagement',
+      'Full web platform + Flutter mobile app built in sync during the hackathon',
+    ],
+    links: [{ label: 'GitHub →', href: 'https://github.com/LunaNanobana/volunai', primary: true }],
+  },
+  {
+    id: 'hacknu',
+    award: 'SPECIAL PRIZE · HACKNU', awardClass: 'award-special',
+    title: 'Growth Intelligence Pipeline',
+    event: 'HackNU 2026 · Growth Engineering Track',
+    desc: 'An automated competitive intelligence system that reverse-engineers Claude\'s viral growth patterns by scraping Reddit & Hacker News, applying topic modelling and sentiment analysis, and visualising everything on a live dashboard.',
+    impact: 'Replaced hours of manual content review with an automated pipeline over ~9,200 posts and a data-backed growth playbook.',
+    tags: ['Python', 'PRAW', 'pandas', 'LDA', 'VADER', 'scikit-learn', 'matplotlib', 'Flask'],
+    highlights: [
+      'Scraped ~9,200 posts from Reddit & Hacker News using PRAW and the Algolia API — fully automated, no manual labelling',
+      'Applied LDA topic modelling (10 clusters) and VADER sentiment analysis to classify content and score virality',
+      'Found that Research & Analysis posts had 2× the viral rate of the dominant Coding category (16% vs 8.7%)',
+      'Built a live dashboard with auto-refresh showing growth timelines, viral-rate matrices and complaint trend signals',
+      'Delivered a data-backed counter-playbook: a concrete growth distribution plan for a competing AI product',
+    ],
+    links: [{ label: 'GitHub →', href: 'https://github.com/LunaNanobana/hacknu-growth-intelligence', primary: true }],
+  },
+  {
+    id: 'kazpunct',
+    award: '2ND PLACE · WISH / KAGGLE', awardClass: 'award-silver',
+    title: 'KazPunct',
+    event: 'WISH Hackathon (Women in STEM) · NLP Track + Kaggle Competition',
+    desc: 'Punctuation restoration for Kazakh speech-recognition output using a fine-tuned multilingual RoBERTa model. ASR produces raw lowercase text — this model predicts the punctuation after each word, unlocking downstream tasks like summarisation and translation.',
+    impact: 'Ranked 2nd on Kaggle; makes Kazakh transcripts readable, with potential to cut manual editing time by ~40%.',
+    tags: ['Python', 'PyTorch', 'Hugging Face', 'xlm-roberta-base', 'Token Classification', 'NLP', 'Kazakh'],
+    highlights: [
+      'Fine-tuned xlm-roberta-base on labelled Kazakh text for per-token punctuation prediction (O, comma, period, question)',
+      'Tackled a real low-resource NLP problem — Kazakh punctuation restoration has almost no prior public work',
+      'Framed as token classification; evaluated with precision / recall / F1 per punctuation class',
+      'Placed 2nd in the accompanying Kaggle competition',
+    ],
+    links: [
+      { label: 'Open in Colab', href: 'https://colab.research.google.com/github/LunaNanobana/kazpunct/blob/main/KazPunct-Hackathon.ipynb', primary: true },
+      { label: 'GitHub →', href: 'https://github.com/LunaNanobana/kazpunct' },
+    ],
+  },
+  {
+    id: 'safespace',
+    award: '2ND PLACE · WOMEN\'S HACK DAY', awardClass: 'award-silver',
+    title: 'SafeSpace',
+    event: 'Women\'s Hack Day 5 · Women\'s Safety & Support Platform',
+    desc: 'A mobile and web safety platform for women — one-tap SOS, shelter maps, AI chat support, a community forum and curated resources. Designed to work fast when it matters most.',
+    impact: 'Shortens the time to reach help in unsafe situations and builds a trusted peer-support network.',
+    tags: ['Flutter', 'Dart', 'React', 'Vite', 'Google Maps', 'CSS'],
+    highlights: [
+      'Emergency screen with one-tap SOS and location sharing — no login required for emergency features',
+      'Shelter map showing nearby safe houses and support centres via Google Maps integration',
+      'AI-powered confidential chat for in-the-moment emotional support',
+      'Community forum and curated legal / psychological resources',
+      'Full Flutter mobile app + React web platform built in parallel during the hackathon',
+    ],
+    links: [{ label: 'GitHub →', href: 'https://github.com/LunaNanobana/safespace', primary: true }],
+  },
+  {
+    id: 'docdetector',
+    award: 'INNOVATEX HACKATHON', awardClass: 'award-event',
+    title: 'Document Element Detector',
+    event: 'InnovateX Hackathon · Computer Vision',
+    desc: 'A computer vision tool that detects and classifies stamps, signatures and QR codes in scanned document images — the building block for automated document verification.',
+    impact: 'Built for banks and government services, with potential to reduce manual document processing time by up to 60%.',
+    tags: ['Python', 'PyTorch', 'Computer Vision', 'Object Detection', 'Transfer Learning'],
+    highlights: [
+      'Fine-tuned a pretrained computer vision model to detect and classify stamps, signatures and QR codes',
+      'Reached ~90% accuracy on the validation set',
+      'Designed for automated document verification pipelines in banking and public services',
+    ],
+    links: [],
+  },
+  {
+    id: 'quala',
+    award: 'BUSINESS CUP', awardClass: 'award-event',
+    title: 'Quala',
+    event: 'Business Cup · Gamified City Loyalty Platform',
+    desc: 'A gamified loyalty platform: users visit partner cafés and restaurants to earn loot boxes and collectible NFT cards that unlock real discounts, while venues get verified foot traffic and analytics.',
+    impact: 'B2B monthly SaaS model with a projected ~20% increase in repeat visits for partner venues.',
+    tags: ['Product Design', 'Gamification', 'NFT', 'SaaS', 'Analytics'],
+    highlights: [
+      'Gamified loop: visit partner venues → earn loot boxes → collect NFT cards → unlock real discounts',
+      'Designed a monthly SaaS subscription giving venues verified foot traffic and customer analytics',
+      'Projected ~20% increase in repeat visits and a recurring revenue stream for the platform',
+    ],
+    links: [],
+  },
+  {
+    id: 'wardrobe',
+    award: 'WOMEN\'S HACK DAY', awardClass: 'award-event',
+    title: 'Smart Wardrobe',
+    event: 'Women\'s Hack Day · AI Outfit Generator',
+    desc: 'An AI-powered outfit generator. Users upload photos of individual clothing items and get complete outfit suggestions from an AI styling algorithm — built as both a Flutter mobile app and a web platform.',
+    impact: 'Promotes sustainable fashion by helping users get more value from clothes they already own.',
+    tags: ['Flutter', 'Dart', 'AI/ML', 'Image Processing', 'Web'],
+    highlights: [
+      'AI styling algorithm generates outfit combinations from user-uploaded clothing photos',
+      'Photo upload with AI analysis of clothing style, colour and type',
+      'Mobile app (Flutter) and web version built simultaneously during the hackathon',
+      'Encourages re-wearing over new purchases, reducing unnecessary clothing spend',
+    ],
+    links: [{ label: 'GitHub →', href: 'https://github.com/LunaNanobana/smart-wardrobe', primary: true }],
+  },
+  {
+    id: 'marketplace',
+    award: 'PERSONAL PROJECT', awardClass: 'award-personal',
+    title: 'Consumer–Producer Marketplace',
+    event: 'Personal Project · Full-Stack',
+    desc: 'A full-stack marketplace with a single Django backend powering both a web frontend and a Flutter mobile app. Users log in once and their session is synchronised across both platforms.',
+    impact: 'Reusing one backend lowered development and infrastructure costs and kept the experience consistent across web and mobile.',
+    tags: ['Flutter', 'Dart', 'Python', 'Django', 'Docker', 'REST API', 'JWT'],
+    highlights: [
+      'Single Django backend serves both web and mobile clients — one source of truth, no sync issues',
+      'JWT-based auth shared across platforms: log in on mobile, stay logged in on web',
+      'Docker + docker-compose for consistent local and production environments',
+      'Full-stack architecture: API design, auth flows and token management',
+    ],
+    links: [{ label: 'GitHub →', href: 'https://github.com/LunaNanobana/consumer-producer', primary: true }],
+  },
+];
+
+const awards = [
+  { year: '2026', name: 'HackNU', event: 'Growth Engineering Track', badge: 'SPECIAL PRIZE', cls: 'award-special' },
+  { year: '2026', name: 'WISH Hackathon + Kaggle', event: 'KazPunct · NLP Track', badge: '2ND PLACE', cls: 'award-silver' },
+  { year: '2026', name: 'Women\'s Hack Day 5', event: 'SafeSpace · Safety Platform', badge: '2ND PLACE', cls: 'award-silver' },
+  { year: '2025', name: 'Women\'s Hack Day', event: 'Smart Wardrobe · AI App', badge: 'PARTICIPANT', cls: 'award-event' },
+  { year: '2025', name: 'DataSci Fest', event: 'Incubation Program · Cloud security, AI video analytics, AI agents', badge: 'PROGRAM', cls: 'award-event' },
+  { year: '2024', name: 'SheCodes', event: 'VolunAI · Volunteer Platform', badge: '1ST PLACE', cls: 'award-gold' },
+  { year: '—', name: 'InnovateX Hackathon', event: 'Document Element Detector · CV', badge: 'PARTICIPANT', cls: 'award-event' },
+  { year: '—', name: 'Business Cup', event: 'Quala · Loyalty Platform', badge: 'PARTICIPANT', cls: 'award-event' },
+];
+
+const $ = (id) => document.getElementById(id);
+
+function renderProjects() {
+  const grid = $('projectsGrid');
+  projects.forEach((p) => {
+    const card = document.createElement('article');
+    card.className = 'project-card reveal';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', `Open details for ${p.title}`);
+    card.innerHTML = `
+      <div class="card-arrow" aria-hidden="true">↗</div>
+      ${p.award ? `<div class="card-award ${p.awardClass || 'award-event'}">${p.award}</div>` : ''}
+      <div class="card-title">${p.title}</div>
+      <div class="card-sub">${p.event}</div>
+      <div class="card-desc">${p.desc}</div>
+      ${p.impact ? `<div class="card-impact">${p.impact}</div>` : ''}
+      <div class="tags">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    `;
+    card.addEventListener('click', () => openProject(p, card));
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(p, card); }
+    });
+    grid.appendChild(card);
+  });
+}
+
+function renderAwards() {
+  $('awardsList').innerHTML = awards.map(a => `
+    <div class="award-item">
+      <div class="award-year">${a.year}</div>
+      <div class="award-body">
+        <div class="award-info-name">${a.name}</div>
+        <div class="award-info-event">${a.event}</div>
+      </div>
+      <span class="award-badge ${a.cls}">${a.badge}</span>
+    </div>`).join('');
+}
+
+let lastFocused = null;
+function openProject(p, trigger) {
+  lastFocused = trigger || document.activeElement;
+  $('modalContent').innerHTML = `
+    ${p.award ? `<div class="modal-award ${p.awardClass || 'award-event'}">${p.award}</div>` : ''}
+    <h3 id="modalTitle">${p.title}</h3>
+    <div class="modal-event">${p.event}</div>
+    <div class="modal-desc">${p.desc}</div>
+    ${p.impact ? `<div class="modal-section-title">Impact</div><div class="card-impact" style="margin:0 0 32px">${p.impact}</div>` : ''}
+    <div class="modal-section-title">Key Highlights</div>
+    <div class="modal-highlights">${p.highlights.map(h => `<div class="modal-highlight">${h}</div>`).join('')}</div>
+    <div class="modal-section-title">Tech Stack</div>
+    <div class="modal-tags">${p.tags.map(t => `<span class="modal-tag">${t}</span>`).join('')}</div>
+    ${p.links && p.links.length ? `<div class="modal-links">${p.links.map(l => `<a href="${l.href}" target="_blank" rel="noopener" class="modal-link${l.primary ? ' primary' : ''}">${l.label}</a>`).join('')}</div>` : ''}
+  `;
+  const backdrop = $('modalBackdrop');
+  backdrop.classList.add('open');
+  backdrop.setAttribute('aria-hidden', 'false');
+  $('modal').scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => $('modalClose').focus(), 50);
+}
+
+function closeModal() {
+  const backdrop = $('modalBackdrop');
+  if (!backdrop.classList.contains('open')) return;
+  backdrop.classList.remove('open');
+  backdrop.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  if (lastFocused) lastFocused.focus();
+}
+
+$('modalBackdrop').addEventListener('click', (e) => { if (e.target === e.currentTarget) closeModal(); });
+$('modalClose').addEventListener('click', closeModal);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeMenu(); } });
+
+// Mobile menu
+const navToggle = $('navToggle'), navLinks = $('navLinks');
+function closeMenu() { navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', 'false'); navToggle.textContent = '☰'; }
+navToggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  navToggle.setAttribute('aria-expanded', String(open));
+  navToggle.textContent = open ? '✕' : '☰';
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Nav background + active section highlight
+const sections = ['experience', 'projects', 'skills', 'about', 'contact'].map(id => $(id));
+function onScroll() {
+  $('nav').classList.toggle('scrolled', window.scrollY > 40);
+  let current = '';
+  sections.forEach(s => { if (s.getBoundingClientRect().top <= 120) current = s.id; });
+  navLinks.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${current}`));
+}
+window.addEventListener('scroll', onScroll, { passive: true });
+
+// Render + scroll reveal (observe each element once)
+renderProjects();
+renderAwards();
+$('year').textContent = new Date().getFullYear();
+onScroll();
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+}
+</script>
+</body>
+</html>
